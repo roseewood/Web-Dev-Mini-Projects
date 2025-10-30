@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Flipper | Hacktoberfest</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      transition: background 0.4s ease;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .color-box {
+      margin: 20px auto;
+      font-size: 26px;
+      font-weight: bold;
+      border: 2px solid #333;
+      padding: 10px 25px;
+      border-radius: 10px;
+      width: fit-content;
+      background: #fff;
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background-color: #555;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Color Flipper 🎨</h1>
+    <p>Click the button to change the background color!</p>
+    <div class="color-box" id="colorBox">#FFFFFF</div>
+    <button id="flipBtn">Flip Color</button>
+
+    <footer>Made for <strong>Hacktoberfest</strong> 💻</footer>
+  </div>
+
+  <script>
+    const flipBtn = document.getElementById('flipBtn');
+    const colorBox = document.getElementById('colorBox');
+
+    // Function to generate random hex color
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    // Change color on button click
+    flipBtn.addEventListener('click', () => {
+      const newColor = getRandomColor();
+      document.body.style.backgroundColor = newColor;
+      colorBox.textContent = newColor;
+      colorBox.style.background = newColor;
+      colorBox.style.color = getTextColor(newColor);
+    });
+
+    // Function to make text readable (white/black based on background)
+    function getTextColor(bgColor) {
+      const color = bgColor.substring(1);
+      const rgb = parseInt(color, 16);
+      const r = (rgb >> 16) & 0xff;
+      const g = (rgb >> 8) & 0xff;
+      const b = (rgb >> 0) & 0xff;
+      const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+      return brightness > 125 ? '#000' : '#fff';
+    }
+  </script>
+</body>
+</html>
