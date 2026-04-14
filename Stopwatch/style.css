@@ -1,0 +1,47 @@
+body{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+#container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 30%;
+}
+button{
+  padding: 40px;
+  border-radius: 50px;
+  color: #FFFFFF;
+  border: none;
+}
+#start{
+  margin-right: 20px;
+  background-color: cornflowerblue;
+}
+#reset{
+  margin-right: 20px;
+  background-color: darkgrey;
+}
+#stop{
+  background-color: indianred;
+}
+#clock{
+  font-size: 50px;
+  color: white;
+}
+@media screen and (max-width: 480px) and (pointer: coarse) {
+  #inner{
+    display: flex;
+    flex-direction: row;
+  }
+  button{
+    padding: 30px;
+  }
+}
