@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #111827;
+  color: #f9fafb;
+  min-height: 100vh;
+  padding: 30px 16px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #9ca3af;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  min-height: 220px;
+  padding: 16px;
+  border: 1px solid #374151;
+  border-radius: 10px;
+  background-color: #1f2937;
+  color: #f9fafb;
+  font-family: Consolas, monospace;
+  font-size: 1rem;
+  resize: vertical;
+  outline: none;
+}
+
+textarea:focus {
+  border-color: #60a5fa;
+}
+
+button {
+  padding: 10px 16px;
+  margin: 5px 5px 5px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+#statusMessage {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #1f2937;
+  color: #d1d5db;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  textarea {
+    min-height: 180px;
+  }
+
+  button {
+    width: 100%;
+    margin-right: 0;
+  }
+}

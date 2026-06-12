@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSON Formatter & Validator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>JSON Formatter & Validator</h1>
+    <p>Format, validate, minify, and copy JSON quickly.</p>
+  </header>
+
+  <main>
+
+    <section>
+      <label for="jsonInput">Input JSON</label>
+      <textarea id="jsonInput" placeholder="Paste your JSON here..."></textarea>
+    </section>
+
+    <section>
+      <button id="formatBtn">Format</button>
+      <button id="minifyBtn">Minify</button>
+      <button id="copyBtn">Copy Output</button>
+      <button id="clearBtn">Clear</button>
+      <button id="sampleBtn">Sample JSON</button>
+    </section>
+
+    <section>
+      <label for="jsonOutput">Output JSON</label>
+      <textarea id="jsonOutput" readonly placeholder="Formatted JSON will appear here..."></textarea>
+    </section>
+
+    <section>
+      <p id="statusMessage">Waiting for JSON input...</p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
